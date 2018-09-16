@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ABOUT.html</file>
+        <file>AUTHORS</file>
+        <file>AUTHORS.html</file>
+        <file>COPYING</file>
+        <file>COPYING.html</file>
+        <file>images/edit-clear.png</file>
+        <file>images/document-open.png</file>
+        <file>images/application-exit.png</file>
+        <file>images/configure.png</file>
+        <file>images/unknown.png</file>
+        <file>images/document-properties.png</file>
+        <file>images/show-tabs-and-spaces.png</file>
+        <file>images/show-newlines.png</file>
+        <file>images/highlighter_yellow_01.png</file>
+        <file>images/qregexp-editor-logo-128.png</file>
+    </qresource>
+</RCC>

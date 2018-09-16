@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=QRegExp-Editor
+GenericName=QRegExp's Editor for Qt
+Comment=QRegExp's Editor for Qt
+Exec=qregexp-editor
+Icon=qregexp-editor-logo-32
+StartupNotify=true
+Type=Application
+Terminal=false
+Categories=Qt;Development;

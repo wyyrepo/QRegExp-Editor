@@ -1,0 +1,68 @@
+*******************************************************************************
+Installing QRegExp-Editor
+*******************************************************************************
+QRegExp-Editor uses CMake as build tool. If you are experienced in using
+CMake, installation will be a breeze and doesn't need any further explanation.
+Otherwise The steps to compile QRegExp-Editor are as follows:
+
+Windows
+-------------------------------------------------------------------------------
+First of all make sure that CMake is in PATH. If that's not the case add it to
+it like so (assuming CMake was installed to C:\Program Files\CMake 2.8):
+set "PATH=C:\Program Files\CMake 2.8\bin;%PATH%"
+
+Now there are two ways to proceed with the installation, either using the
+provided build script or doing it all manually!
+
+Manual Approach:
+1. The first step is to set these environment variables: QTDIR, MINGW and PATH.
+   QTDIR points to the directory where Qt, and MINGW to the directory where
+   MINGW is installed. PATH will be modified to contain the respective bin
+   directories.
+   
+   set QTDIR=C:\Qt\4.7.1
+   set MINGW=C:\MinGW
+   set PATH=%MINGW%\bin;%QTDIR%\bin;%PATH%
+
+2. Create a build directory and change into it:
+   md build
+   cd build
+
+3. Run CMake:
+   cmake -G "MinGW Makefiles" ..
+
+4. Build the project:
+   make
+
+Using the build script:
+1. Execute build script:
+   compile-win32.bat
+
+Note:
+If you have set the variables QTDIR and MINGW as described under the section
+"Manual Approach" above, the script will detect and use those. Otherwise the
+batch script will prompt you for the location where you have installed MinGW
+and Qt respectively. You are strongly advised to set QTDIR and MINGW in your
+environment if you want to repeatedly call the script since you won't have to
+type in those values over and over again.
+
+
+The resulting binary "qregexp-editor.exe" will be placed under build/src.
+
+MacOSX and Linux
+-------------------------------------------------------------------------------
+1. We assume that development binaries are in PATH and can be found by CMake.
+Otherwise you should modify the PATH variable accordingly.
+
+2. Create a build directory and change into it:
+   mkdir build
+   cd build
+
+3. Run CMake:
+   cmake ..
+
+4. Build the project:
+   make
+
+The resulting binary "qregexp-editor" will be placed under build/src.
+

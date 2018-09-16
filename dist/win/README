@@ -1,0 +1,45 @@
+*******************************************************************************
+How to create a Windows installer for QRegExp-Editor
+*******************************************************************************
+
+Prerequisites:
+-------------------------------------------------------------------------------
+* Qt is installed
+* MinGW is installed
+* NSIS in installed
+* CMake is installed
+* QRegExp-Editor executable has already been build using CMake
+	
+How to build the installer:
+-------------------------------------------------------------------------------
+execute the provided build script:
+build_installer.bat
+
+
+Detailed Explanation:
+-------------------------------------------------------------------------------	
+QRegExp-Editor's windows installer is created using NSIS. You thus need to
+install NSIS first if you want to build your custom windows installer for it.
+You can download the latest version of the installer from the NSIS project
+website located at http://nsis.sourceforge.net. Make sure the nsis compiler is
+in PATH so it can be found by the command line interpreter.
+Another requirement is that the project has already been built.
+
+The installer script is called "qregexp-editor.nsi" and is located in the
+dist/win directory. In order for the script to correctly produce binaries, it
+needs to know where Qt and MinGW are installed and optinally whether the
+executable is 32 or 64 bit. If you set those variables in your environment
+they will be automatically detected by the batch script used to build the
+installer. If not you are prompted for those values.
+
+Setting the environment variables (optional):
+set QTDIR="C:\Qt\4.7.1"
+set MINGW="C:\MinGW"
+set ARCH=32
+
+There is also a variable VERSION which should ideally be automatically detected
+by the build_installer.bat batch script. If that is not the case you can also
+set it as an environment variable or you'll be prompted for it.
+
+The resulting installer will be placed in the same directory where the nsis
+script is located.

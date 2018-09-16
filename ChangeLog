@@ -1,0 +1,796 @@
+2012-03-20  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt: QREGEXP-EDITOR 0.2.1 
+
+2012-03-20  Mohammad Mehdi Salem Naraghi <momesana@gmail.com>
+
+  * src/ui/escapedpatterndialog.ui, translations/qregexp-editor_de.ts,
+  translations/qregexp-editor_fa.ts: Updated the translation files and a string
+  in the escaped pattern dialog.
+
+2012-03-17  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * translations/qregexp-editor_de.ts, translations/qregexp-editor_fa.ts:
+  Updates source translations files 
+
+2012-03-14  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * translations/qregexp-editor_de.ts, translations/qregexp-editor_fa.ts:
+  Updates source translations files 
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/escapedpatterndialog.cpp,
+  src/escapedpatterndialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/node.cpp, src/node.h, src/regexpmodel.cpp,
+  src/regexpmodel.h, src/treeitem.cpp, src/treeitem.h: Updates M. Mehdi Salem
+  Naraghi email adress 
+
+  * AUTHORS, AUTHORS.html: Adds missing emails to the AUTHORS files. Updates
+  translations authors 
+
+  * AUTHORS, AUTHORS.html: Adds contributors section in AUTHORS files 
+
+  * src/aboutdialog.cpp: Use QString::fromUtf8() instead of QString()  My name
+  (Luís) requires UTF-8. 
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/constants.h,
+  src/escapedpatterndialog.cpp, src/escapedpatterndialog.h, src/main.cpp,
+  src/mainwindow.cpp, src/mainwindow.h, src/node.cpp, src/node.h,
+  src/parentheseshighlighter.cpp, src/parentheseshighlighter.h,
+  src/preferences/preferencesdialog.cpp, src/preferences/preferencesdialog.h,
+  src/preferences/preferencespageinterface.h,
+  src/preferences/regexpoptions.cpp, src/preferences/regexpoptions.h,
+  src/preferences/regexpsettings.cpp, src/preferences/regexpsettings.h,
+  src/preferences/settingsinterface.cpp, src/preferences/settingsinterface.h,
+  src/regexpmodel.cpp, src/regexpmodel.h, src/regexptextedit.cpp,
+  src/regexptextedit.h, src/regexptextedit_p.cpp, src/regexptextedit_p.h,
+  src/searchdata.cpp, src/searchdata.h, src/searchsettings.cpp,
+  src/searchsettings.h, src/treeitem.cpp, src/treeitem.h: Updates the copyright
+  years and copyright owners 
+
+2012-03-13  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, images/document-properties.png, src/CMakeLists.txt,
+  src/constants.h, src/mainwindow.cpp, src/mainwindow.h,
+  src/preferences/regexpoptions.cpp, src/preferences/regexpoptions.h,
+  src/preferences/regexppreferencespage.cpp,
+  src/preferences/regexppreferencespage.h,
+  src/preferences/regexppreferencespage.ui, src/preferences/regexpsettings.cpp:
+  Adds parentheses match highlight color chooser  Give the the ability to
+  choose the parentheses matching highlight color. It's the first use of the
+  PreferencesDialog class. 
+
+2012-03-12  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/regexptextedit.cpp: Fixes bug when changing regexpEditor highlight
+  color  If highlight isn't enabled just update the stored highlight color.
+  setHighlightColor() changes highlight color even if highlight is disabled.
+  This isn't what we want. So, we only call setHighlightColor() if highlight is
+  enabled. 
+
+2012-02-12  Kevin Funk <krf@electrostorm.net>
+
+  * src/mainwindow.cpp: Expand all rows when one match only
+
+2012-01-12  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, src/CMakeLists.txt, src/tests/CMakeLists.txt,
+  src/tests/patternfiltertest.cpp, src/tests/patternfiltertest.h: Adds an
+  PatternFilter unit test  To run the tests just type: 'make test' 
+
+  * src/mainwindow.cpp, src/mainwindow.h, src/patternfilter.cpp,
+  src/patternfilter.cpp.orig, src/patternfilter.h, src/ui/mainwindow.ui: Adds
+  filter trailing whitespaces from pattern  Removes trailing whitespaces ('t',
+  '+', 'v', 'f', 'r', and ' ') from the pattern sent to evaluation. This filter
+  can be used in conjunction with the newlines filter to filter trailing
+  whitespaces in regexesp's that were split among multiple lines. 
+
+  * src/CMakeLists.txt, src/mainwindow.cpp, src/mainwindow.h,
+  src/patternfilter.cpp, src/patternfilter.h,
+  src/preferences/regexpoptions.cpp, src/preferences/regexpoptions.h,
+  src/preferences/regexpsettings.cpp, src/ui/mainwindow.ui: Adds filter
+  newlines from pattern  In complex regexp's, there is a need to split the
+  regexp's among several lines. Of course that the newlines shouldn't be part
+  of the pattern sent to evaluation. Give the user the power of choice. 
+
+2011-11-17  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: More fine-grained RegExp updates 
+  There is no need to update the pattern when only the other options are
+  changed. Right now the pattern is simply the plain text taken from
+  RegexpTextEdit but in the future it will need processing before being passed
+  to QRegExp. 
+
+2011-11-15  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Cleans up unused
+  MainWindow::returnPressed() slot  An return on the regexpEdit is a newline.
+  An artifact that was left behind when the one line editor was upgraded to an
+  text editor. 
+
+2011-11-28  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CREDITS, application.qrc, images/highlighter_yellow_01.png,
+  src/constants.h, src/mainwindow.cpp, src/mainwindow.h,
+  src/preferences/regexpoptions.cpp, src/preferences/regexpoptions.h,
+  src/preferences/regexpsettings.cpp, src/ui/mainwindow.ui: Adds parentheses
+  match button to the regexp toolbar  A very useful feature in long/complex
+  regexp's 
+
+2011-11-29  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, images/show-newlines.png, images/show-tabs-and-spaces.png,
+  src/CMakeLists.txt, src/constants.h, src/mainwindow.cpp, src/mainwindow.h,
+  src/preferences/regexpoptions.cpp, src/preferences/regexpoptions.h,
+  src/preferences/regexpsettings.cpp, src/preferences/regexpsettings.h,
+  src/ui/mainwindow.ui: Adds an regexpEdit toolbar  Adds (in the regexp editor
+  area) the ability to: Show/Hide tabs and spaces indicators; Show/Hide line
+  separators indicators.  The icons show my lack of artistic capabilities. 
+
+2011-11-11  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, images/unknown.png, src/CMakeLists.txt, src/constants.h,
+  src/preferences/preferencesdialog.cpp, src/preferences/preferencesdialog.h,
+  src/preferences/preferencesdialog.ui,
+  src/preferences/preferencespageinterface.h,
+  src/preferences/settingsinterface.cpp, src/preferences/settingsinterface.h:
+  Adds Preferences/Settings framework classes  It's a very limited framework.
+  Qt should provide an preferences/settings framework (IMHO). 
+  PreferencesDialog provides an icon list configuration dialog box. It supports
+  Ok, Apply and Cancel buttons.  PreferencesPageInterface is and interface for
+  the preferences pages managed by PreferencesDialog.  SettingsInterface is the
+  interface for the keeper of each page options. 
+
+2011-11-09  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, images/configure.png, src/constants.h, src/mainwindow.cpp,
+  src/mainwindow.h: Adds Settings > Preferences menu entry  The first step of
+  an ultra simple preferences "framework". Qt lacks an settings/configuration
+  framework :( 
+
+2011-11-28  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Fixes layout issue in regexp options  Keep the match
+  button away away from regexp options. 
+
+2011-11-24  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Sets inputEditToolbar floatable to false  No
+  floatable toolbars. Having it in the top, bottom, left and right is enough. 
+
+  * src/mainwindow.cpp, src/mainwindow.h, src/ui/mainwindow.ui: Adds View >
+  Toolbar menus  Give the user a more 'standard' way to choose what toolbar are
+  visible. The other way is right clicking on a toolbar area (a popup menu is
+  fired with all the docked widgets and toolbars). 
+
+  * src/ui/mainwindow.ui: Renames toolbar to editInputToolBar  There will be
+  multiple toolbars, let's call them by name. 
+
+2011-11-22  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Removes windowTitle property  The windowTitle is
+  already set in the mainwindow.cpp code with: qApp->applicationName() 
+
+  * src/ui/mainwindow.ui: Sets ToolBarButtonStyle to ToollButtonFollowStyle 
+  Just follow the environment we are in. 
+
+2011-11-14  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/regexptextedit.cpp, src/regexptextedit.h: Adds
+  showLineAndParagraphSeparatorsEnabled() to the RegexpTextEdit API  If a set
+  method is provided, a 'get' must also be provided. 
+
+2011-11-02  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/regexptextedit_p.cpp: Ran astyle-qregexp_editor 
+
+  * src/mainwindow.cpp, src/regexptextedit.cpp, src/regexptextedit.h,
+  src/regexptextedit_p.cpp, src/regexptextedit_p.h: Adds show line and
+  paragraph separators to regexp editor  Disabled by default. UI to toggle it
+  will follow. 
+
+  * src/mainwindow.cpp, src/regexptextedit.cpp, src/regexptextedit.h,
+  src/regexptextedit_p.cpp, src/regexptextedit_p.h: Adds show tabs and
+  whitespaces option to the regexp editor  Give the user the ability to display
+  spaces and tabs like in an word processor. Disabled by default. The UI to
+  toggle it will follow. 
+
+2011-09-27  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/regexpmodel.cpp: Use QRegExp PatternSyntax enum instead of "obscure"
+  numbers  Easier to read and maintain. 
+
+2011-06-28  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/CMakeLists.txt, src/mainwindow.cpp, src/mainwindow.h,
+  src/parentheseshighlighter.cpp, src/parentheseshighlighter.h,
+  src/regexptextedit.cpp, src/regexptextedit.h, src/regexptextedit_p.cpp,
+  src/regexptextedit_p.h, src/ui/mainwindow.ui: Adds parentheses matching
+  highlight  Closes SF feature request #3186604 
+
+2011-03-25  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Sets a proper tab order 
+
+  * src/mainwindow.cpp, src/mainwindow.h, src/ui/mainwindow.ui: Changes Search
+  to Match (in the regexp Ui)  Match is a more accurate description. 
+
+  * src/mainwindow.cpp, src/ui/mainwindow.ui: Refactors the RegExp Ui  The
+  regexp QLineEdit is replaced by an QPlainTextEdit, allowing easier complex
+  regexp's pattern manipulation. Remaing QRegExp parameters Ui changed it's
+  place on the Ui using the available space in a more effective way. 
+
+2011-03-01  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Sets application icon (in the program windows) 
+
+2011-03-21  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * qregexp_editor-version.cpp.in, src/aboutdialog.cpp, src/aboutdialog.h,
+  src/constants.h, src/escapedpatterndialog.cpp, src/escapedpatterndialog.h,
+  src/main.cpp, src/mainwindow.cpp, src/mainwindow.h, src/node.cpp, src/node.h,
+  src/qregexp_editor-version.h, src/regexpmodel.cpp, src/regexpmodel.h,
+  src/searchdata.cpp, src/searchdata.h, src/searchsettings.cpp,
+  src/searchsettings.h, src/treeitem.cpp, src/treeitem.h: Fixes typo in program
+  name 
+
+2011-03-18  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CPackConfig.cmake: Adds processor name to the package filename  Linux can
+  run on an multitude of processors. The package filename must state for what
+  processor it was built. 
+
+  * CMakeLists.txt, CPackConfig.cmake, src/CMakeLists.txt: Follow MacOSX naming
+  conventions for Apps  Some changes to make the mac binary better match the
+  Mac OS X naming conventions for Apps.  Written-by: Mohammad Mehdi Salem
+  Naraghi <momesana@googlemail.com> Refactored-by: Luís Pereira
+  <luis.artur.pereira@gmail.com>
+
+2011-03-16  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt: QREGEXP-EDITOR 0.2.0.2 
+
+  * src/main.cpp: Ran astyle-qregexp_editor 
+
+2011-03-15  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, dist/linux/qregexp-editor.desktop: Adds QRegExp-Editor menu
+  entry on freedesktop compliant desktops  QRegExp-Editor will show up under
+  the Development menu. 
+
+2011-03-11  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt: Install icons and images 
+
+2011-03-01  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, src/constants.h, src/mainwindow.cpp: Sets application icon
+  (in the program windows) 
+
+2011-03-04  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * images/qregexp-editor-logo-128.png, images/qregexp-editor-logo-16.png,
+  images/qregexp-editor-logo-24.png, images/qregexp-editor-logo-256.png,
+  images/qregexp-editor-logo-32.png, images/qregexp-editor-logo-48.png,
+  images/qregexp-editor-logo-64.png: Ran create_images.sh script 
+
+  * images/create_images.sh: Adds svg to png logo conversion script  The script
+  creates png icons (16x16...256x256) from the svg logo.  Written-by: Mohammad
+  Mehdi Salem Naraghi <momesana@googlemail.com> Modified-by: Luís Pereira
+  <luis.artur.pereira@gmail.com>
+
+  * images/qregexp-editor-logo.svg: Adds QRegExp-Editor logo (svg format) 
+  Original idea by Luís Pereira Improvements by Mohammad Mehdi Salem Naraghi 
+
+2011-02-28  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Use IniFormat for storing settings  The NativeFormat in
+  Windows use the infamous registry. Ini files are much easier to check,
+  modify, delete and debug. 
+
+2011-02-25  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/main.cpp: Adds our website to QCoreApplication::setOrganizationDomain 
+  We now have a website :) http://qregexp-editor.sourceforge.net/ 
+
+2011-02-25  Mohammad Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * dist/win/qregexp-editor.nsi: Removing trailing slash + fixing some
+  indentations in build_installer.bat
+
+2011-02-24  Mohammad Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * dist/win/build_installer.bat: Removed unused variables.
+
+  * compile-win32.bat, dist/win/build_installer.bat: Some refactoring to the
+  build_installer script.
+
+2011-02-23  Mohammad Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * compile-win32.bat: Fixing build script "compile-win32.bat"
+
+2011-02-23  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Add the file extension to a fallback QIcon parameter 
+
+2011-02-23  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * src/regexpmodel.cpp: Fixing indentation in regexpmodel.cpp
+
+2011-02-22  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, CPackConfig.cmake: Use CPack to generate some packages  The
+  current CPack config handles source packages (TBZ2, TGZ, ZIP) and STGZ (self
+  extracting TGZ) bins for Linux.  TODO: Automatic ChangeLog handling for
+  releases; Automatic version file for releases. 
+
+  * scripts/gitlog2changelog.py: Adds gitlog2changelog.py script  A script to
+  generate pretty ChangeLog files form git log. Taken from:
+  https://github.com/cryos/avogadro/blob/master/scripts/gitlog2changelog.py
+  Copyright 2008 Marcus D. Hanwell <marcus@cryos.org>
+
+2011-02-22  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * src/regexpmodel.cpp: Counting number of matches and displaying them in the
+  statusbar.
+
+2011-02-22  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, cmake_uninstall.cmake.in: Adds uninstall target to the
+  build system  Taken from:
+  
+   
+
+2011-02-22  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * compile-win32.bat, dist/win/build_installer.bat: Removing trailing
+  whitespaces.
+
+2011-02-18  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt: Substitutes share absolute path by a relative one  CPack
+  doesn't work well with absolute paths. The translations would not be part of
+  the generated package. Yes, CPack will be used in the future to package
+  releases. 
+
+2011-02-18  Mohammad Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * compile-win32.bat, dist/win/build_installer.bat,
+  dist/win/qregexp-editor.nsi: Adding fixes to the NSIS installer script: *
+  compile-win32.bat both checks for make and mingw32-make.exe if former wasn't
+  found. * compile-win32.bat also builds the translations by default now *
+  checking for  VERSION_FILE instead of VERSION-FILE now. * QRegExp-Editor is
+  now part of the destination folder default value in the installer. *
+  Translations files are handled (installed and uninstalled) correctly now.
+
+2011-02-15  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * INSTALL, README, README.txt, compile-win32.bat, dist/win/README,
+  dist/win/build_installer.bat, dist/win/qregexp-editor.nsi: More work on NSIS
+  Windows installer script * Integration with Add/Remove Program section of
+  Windows Control Panel * Detection and Uninstallation of previously installed
+  versions * build_installer.bat prompts for the location of Qt and MinGW if
+  not * set as a environment variable. * compile-win32.bat prompts for the
+  location of Qt and MinGW if not set * as a environment variable * Added
+  INSTALL file * Added README for instructions on how to create installers
+
+2011-02-03  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/CMakeLists.txt: Build translations by default  To build translations
+  one had to type: 'make translations'. Now they are built by default. 
+
+  * scripts/astyle-qregexp_editor, scripts/astyle-qregexp_editor.bat: Adds
+  minimum allowed astyle version info 
+
+  * scripts/astyle-qregexp_editor: Use find more efficiently (in the astyle
+  script)  Also refactors the astyle options.  Suggested-by: M. Mehdi Salem
+  Naraghi <momesana@googlemail.com>
+
+2011-02-02  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/escapedpatterndialog.cpp,
+  src/escapedpatterndialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/node.cpp, src/node.h, src/regexpmodel.cpp,
+  src/regexpmodel.h, src/searchsettings.cpp, src/searchsettings.h,
+  src/treeitem.cpp, src/treeitem.h: Ran astyle script (again)  Now with the
+  --align-pointer=name option 
+
+  * scripts/astyle-qregexp_editor, scripts/astyle-qregexp_editor.bat: Adds
+  align pointer rule to astyle script  char* foo; becomes (with
+  align-pointer=name): char *foo; 
+
+  * scripts/astyle-qregexp_editor.bat: Refactors Windows astyle script 
+  Suggested-by: M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * scripts/astyle-qregexp_editor, scripts/astyle-qregexp_editor.bat: Use
+  Artistic Style short options  astyle 2.01 doesn't work anymore with some long
+  options.  Reported-by: M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * scripts/astyle-qregexp_editor: Replaces backsticks by $()  Backsticks are
+  POSIX deprecated.  Reported-by: M. Mehdi Salem Naraghi
+  <momesana@googlemail.com>
+
+2011-01-27  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/node.cpp, src/node.h, src/regexpmodel.cpp,
+  src/regexpmodel.h, src/searchdata.cpp, src/searchdata.h,
+  src/searchsettings.cpp, src/treeitem.cpp, src/treeitem.h: Ran coding style
+  script 
+
+  * scripts/astyle-kdelibs, scripts/astyle-kdelibs.bat,
+  scripts/astyle-qregexp_editor, scripts/astyle-qregexp_editor.bat: Adapts
+  coding style scripts to QRegExp-Editor 
+
+  * scripts/astyle-kdelibs, scripts/astyle-kdelibs.bat: Borrow Kdelibs Coding
+  Style script  Downloaded from:
+  http://websvn.kde.org/*checkout*/trunk/KDE/kdesdk/scripts/astyle-kdelibs
+  http://websvn.kde.org/*checkout*/trunk/
+  /KDE/kdesdk/scripts/astyle-kdelibs.bat 
+
+  * src/aboutdialog.cpp: Sets codec for the AboutDialog input files  Commit
+  2b44049804dbfd4600bae6ced6bc96c54b5d723f changed the files encoding to UTF-8
+  but the input codec stream wasn't changed. 
+
+2011-01-21  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/CMakeLists.txt, src/mainwindow.cpp, src/mainwindow.h,
+  src/searchdata.cpp, src/searchdata.h, src/searchsettings.cpp,
+  src/searchsettings.h: Refactors and expands the settings code  Code
+  refactored to ease maintenance and handle new features. The settings code can
+  now handle a search history, although not yet implemented. The changes needed
+  to achieve a search history make the new structure not entirely compatible
+  with the old one. 
+
+2011-01-18  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Adds an m_settings member variable to
+  the MainWindow class  It's better to use one variable that contains the
+  settings during all program lifetime. 
+
+2011-01-25  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * AUTHORS, AUTHORS.html: Changed some files encoding  Changed from ISO-8859-1
+  to UTF-8 
+
+  * AUTHORS, AUTHORS.html: Minor changes to the Authors Section  Contributors
+  replaced by Developers. Removes extra line break. 
+
+2011-01-23  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * AUTHORS, AUTHORS.html: Changed Authors section
+
+  * src/CMakeLists.txt: Suppress console on windows
+
+  * README.txt, compile-win32.bat, dist/win/qregexp-editor.nsi: Added installer
+  script for windows
+
+2011-01-21  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * ABOUT.html, src/aboutdialog.cpp, src/aboutdialog.h,
+  src/escapedpatterndialog.cpp, src/escapedpatterndialog.h, src/main.cpp,
+  src/mainwindow.cpp, src/mainwindow.h, src/node.cpp, src/node.h,
+  src/regexpmodel.cpp, src/regexpmodel.h, src/treeitem.cpp, src/treeitem.h:
+  Updates the copyright disclaimer project name  QRegExp-Editor is the project
+  'official' name. Use it consistently. 
+
+2011-01-03  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Groups all the regexp stuff in a groupbox 
+
+2010-12-30  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/mainwindow.ui: Refactors the regexp Ui  Simpler user presented
+  strings. Elements rearranged. 
+
+2010-12-20  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Search after an return pressed but
+  only if it's possible  When the return was pressed a search was made, even
+  with an invalid regexp pattern. 
+
+2010-12-23  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Sets the default pattern syntax to QRegExp  What is
+  saved is the combobox index, not it's value. Commit
+  2b0ed87959fdac2966f862dc4276677ad679ddc9 broke it. 
+
+2010-12-20  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Creates
+  MainWindow::isSearchPossible() method  Move the code around to make it more
+  modular. 
+
+2010-12-17  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Renames MainWindow::enableSeach() to
+  updateUiStatus() 
+
+2010-12-16  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/regexpmodel.h: Use forward declaration instead of an #include 
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/regexpmodel.cpp, src/regexpmodel.h: Reorder #includes 
+  Speed compilation a little bit. 
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/escapedpatterndialog.h,
+  src/main.cpp, src/mainwindow.cpp, src/mainwindow.h, src/node.h,
+  src/regexpmodel.cpp, src/regexpmodel.h: Use both the module and class name in
+  the Qt included headers  This allows library code to be used by applications
+  without excessive compiler include paths (i.e. faster). 
+
+  * src/mainwindow.cpp: Reorder MainWindow constructor 
+
+  * src/mainwindow.cpp, src/mainwindow.h: Refactor create recent file actions
+  code  Move it to a function. 
+
+  * src/mainwindow.cpp, src/mainwindow.h: Refactor RegExp model creation  Move
+  it to a function. 
+
+  * src/mainwindow.cpp, src/mainwindow.h: Refactor statusBar creation code 
+  Move statusBar creation code to a function. 
+
+  * src/mainwindow.cpp, src/mainwindow.h: Refactor signal connect code  Just
+  move to a function. 
+
+2010-12-15  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Refactor the set icons code  Just
+  move it to a function. 
+
+  * src/mainwindow.cpp, src/mainwindow.h, src/ui/mainwindow.ui: Refactor
+  patternSyntaxComboBox stuff  patternSyntaxComboBox renamed to syntaxComboBox.
+  There is no source of confusion and shorter names are better. Changed the way
+  that the syntaxComboBox is populated. Now everything is done in one place. 
+
+  * src/mainwindow.cpp, src/mainwindow.h, src/ui/mainwindow.ui: Renames the
+  'Evaluate' string to 'Search'  Evaluate is a bit confusing, Search is a
+  better description. Function names also renamed accordingly, except for the
+  backend (RegExpModel class). 
+
+2010-12-07  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/ui/escapedpatterndialog.ui: Updates the escaped pattern rationale  Show
+  howto enter an \" 
+
+  * src/escapedpatterndialog.cpp: Adds double quotes delimiters  Makes it a
+  little bit easier to copy the escaped pattern to the user program code. 
+
+  * src/escapedpatterndialog.cpp, src/escapedpatterndialog.h: Fix the Escaped
+  Pattern tool  Also escape double quotes. 
+
+2010-12-06  momesana <momesana@gentoo-box.(none)>
+
+  * src/escapedpatterndialog.cpp: Removed unneccessary include directive from
+  escapedpatterndialog.h
+
+2010-08-26  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * src/escapedpatterndialog.cpp, src/ui/escapedpatterndialog.ui: Modified the
+  Escaped pattern dialog to use a QLabel for the explanatory text and a
+  QTextBrowser showing the escaped pattern as plain text. This way we won't
+  have to deal with escaping html relevant characters (<, >, ...) and special
+  characters. Previously a pattern like <(\s|\w)>+ wouldn't be displayed at all
+  since the escaped version <(\\s|\\w)> would be considered an unknown tag and
+  simply be ignored.
+
+2010-08-25  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * src/mainwindow.cpp: Changed the background color of the regexp line edit
+  which indicates an invalid pattern to match that of kate and possibly other
+  kde apps.
+
+2010-06-26  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * .gitignore: Updates .gitignore  Remove build-intermediate
+
+  * qregexp-editor.pro: Removes qmake project file
+
+2010-06-22  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, src/CMakeLists.txt, src/main.cpp: Adds translations target 
+  Binary tranlations files (.qm) are installed to:
+  ${CMAKE_INSTALL_PREFIX}/share/qregexp-editor/translations  Usages : (Copied
+  from http://www.cmake.org/Wiki/CMake:How_To_Build_Qt4_Software)  Normal usage
+  - generate the .qm files  You just want to generate the .qm files, so
+  configure cmake with the UPDATE_TRANSLATIONS flag turned off. CMake will not
+  modify your .ts files, and the new .qm files will be built and stored in the
+  project binary folders. When you run "make install" (or equivalent), it'll
+  copy the .qm files into a translations folder in the Install folder. Note
+  that you can continue to update the translations via the linguist. But any
+  new strings in your source code will not appear in your .ts files.  Usage -
+  Updating the .ts files  When you want it to process all your source files
+  (looking for new texts to translate), configure cmake to turn on
+  UPDATE_TRANSLATIONS, and then make your project. CMake will modify your .ts
+  files in your SOURCE folders in addition to generating the .qm files.
+  WARNING: Be aware that CMake will be updating the source .ts files, which
+  means that if you do a make clean, it will DELETE your source .ts files!!! So
+  it would be a good idea to switch off UPDATE_TRANSLATIONS as soon as
+  possible.  Examples:  generate the .qm files: cmake
+  -DCMAKE_INSTALL_PREFIX=$HOME .. make translations  Updating the .ts files:
+  cmake -DUPDATE_TRANSLATIONS=On -DCMAKE_INSTALL_PREFIX=$HOME .. make
+  translations cmake -DUPDATE_TRANSLATIONS=Off -DCMAKE_INSTALL_PREFIX=$HOME ..
+  linguist files_to_translate  TODO: create an 'all' target that compiles code
+  and translations
+
+2010-06-24  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/CMakeLists.txt: Adds resources to the build system
+
+2010-06-15  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * CMakeLists.txt, forms/aboutdialog.ui, forms/escapedpatterndialog.ui,
+  forms/mainwindow.ui, src/CMakeLists.txt, src/ui/aboutdialog.ui,
+  src/ui/escapedpatterndialog.ui, src/ui/mainwindow.ui: Move away from qmake to
+  cmake  CMake is a much superior build system. The forms directory was renamed
+  to ui and moved to src directory. It's the Qt standard way.
+
+2010-06-22  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * qregexp-editor.pro, regexpeditor.pro, src/main.cpp,
+  translations/qregexp-editor_de.ts, translations/qregexp-editor_fa.ts,
+  translations/regexpeditor_de.ts, translations/regexpeditor_fa.ts: Renames the
+  project  The project name changed (very slightly) from place to place.
+  Consistency is always a good thing. QRegExp-Editor is the official project
+  name. For code use qregexp-editor.
+
+2010-06-18  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/main.cpp: QREGEXP-EDITOR 0.2.0.1
+
+2010-06-16  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * .gitignore: Added compiled translation files (*.qm) to .gitignore
+
+  * translations/regexpeditor_de.ts: Updated german translation file.
+
+2010-06-14  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * translations/regexpeditor_de.ts: Updates translations sources
+
+2010-06-13  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * forms/escapedpatterndialog.ui, src/escapedpatterndialog.cpp,
+  src/escapedpatterndialog.h: Added missing source and ui files for the
+  escapedpatterndialog
+
+  * forms/mainwindow.ui, regexpeditor.pro, src/mainwindow.cpp,
+  src/mainwindow.h: Implemented a dialog that shows an escaped version of the
+  used regular expression that can directly be used in C++ code. This relieves
+  the users from the task of escaping each backslash with an additional
+  backslash.
+
+  * forms/mainwindow.ui, src/mainwindow.cpp, src/mainwindow.h: Implementation
+  of a recent file menu
+
+  * src/mainwindow.cpp: Added missing missing argument to the QString that
+  makes up the window title of the about dialog.
+
+  * forms/aboutdialog.ui: Changed the order of tabs in the about dialog. The
+  "About" tag is not at the leftmost position.
+
+2010-06-12  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * translations/regexpeditor_de.qm: Deletes the German compiled translation
+  file  It should only be present on releases.
+
+2010-06-11  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Removes trailing space
+
+  * application.qrc, images/application-exit.png, src/mainwindow.cpp: Adds
+  fallback icon for the Quit menu entry 
+
+2010-06-11  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * forms/aboutdialog.ui, src/aboutdialog.cpp: Slightly changed the version and
+  copyright text displayed on the about dialog along with centering the text on
+  the label.
+
+  * src/aboutdialog.cpp, src/aboutdialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/node.cpp, src/node.h, src/regexpmodel.cpp,
+  src/regexpmodel.h, src/treeitem.cpp, src/treeitem.h: Added copyright and GPL
+  license disclaimer to each *.h and *.cpp file.
+
+2010-06-09  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Adds an message explaining why the regexp pattern is
+  invalid  In the status bar. 
+
+2010-06-10  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * src/mainwindow.cpp: status message to indicate whether the regexp is valid
+  or not
+
+2010-06-12  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * translations/regexpeditor_de.qm, translations/regexpeditor_de.ts: Updates
+  translations  Written-by   : M. Mehdi Salem Naraghi <momesana@googlemail.com>
+  Rearranged-by: Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * application.qrc, images/document-open.png, src/mainwindow.cpp: Adds
+  fallback icon for the Open action  Written-by   : M. Mehdi Salem Naraghi
+  <momesana@googlemail.com> Rearranged-by: Luís Pereira
+  <luis.artur.pereira@gmail.com>
+
+  * forms/mainwindow.ui: Adds shortcut for the Open File action  Written-by   :
+  M. Mehdi Salem Naraghi <momesana@googlemail.com> Rearranged-by: Luís Pereira
+  <luis.artur.pereira@gmail.com>
+
+  * .gitignore: Adds the qregexp-editor bin to the .gitignore list  Written-by 
+   : M. Mehdi Salem Naraghi <momesana@googlemail.com> Rearranged-by: Luís
+  Pereira <luis.artur.pereira@gmail.com>
+
+  * forms/mainwindow.ui: Adds separator on the File menu  Written-by   : M.
+  Mehdi Salem Naraghi <momesana@googlemail.com> Rearranged-by: Luís Pereira
+  <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp, src/mainwindow.h: Improves the regexp validation
+  feature  Written-by   : M. Mehdi Salem Naraghi <momesana@googlemail.com>
+  Rearranged-by: Luís Pereira <luis.artur.pereira@gmail.com>
+
+2010-06-09  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * forms/mainwindow.ui, src/mainwindow.cpp, src/mainwindow.h: Adds open file
+  functionality  Just load a file and search it :) Very basic functionality.
+  Performance issues for large files are certain.
+
+  * src/mainwindow.cpp: Adds regular expression validation  Not all regexp's
+  are valid. Just validate them before use. 
+
+2010-06-09  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * AUTHORS, AUTHORS.html, forms/aboutdialog.ui, src/regexpmodel.cpp: Added
+  some qDebug() instructions to the regexpmodel.cpp
+
+2010-06-08  Luís Pereira <luis.artur.pereira@gmail.com>
+
+  * src/mainwindow.cpp: Resizes the columns to it's contents  In some
+  situations the first column was hidden. Resizing all the columns guarantees
+  no hidden columns and avoids manual resizing by the user. 
+
+2010-05-21  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * translations/regexpeditor_de.qm, translations/regexpeditor_de.ts: corrected
+  typo in german translation file
+
+2010-05-18  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * forms/mainwindow.ui: Readded the accidentally removed splitter that hosts
+  the input edit and result view
+
+  * forms/mainwindow.ui, translations/regexpeditor_de.qm,
+  translations/regexpeditor_de.ts: Updated translation
+
+  * forms/mainwindow.ui, regexpeditor.pro, src/mainwindow.cpp,
+  src/mainwindow.h, src/regexpmodel.cpp, src/regexpmodel.h: Fixed a bug where
+  matching a empty string would lead to an infinite loop effectively
+  hanging/crashing qregexp-editor
+
+  * forms/mainwindow.ui, images/edit-clear.png, regexpeditor.pro, src/main.cpp,
+  src/mainwindow.cpp, src/node.cpp, src/node.h, src/regexpmodel.cpp,
+  src/regexpmodel.h, src/treeitem.cpp, src/treeitem.h,
+  translations/regexpeditor_de.qm, translations/regexpeditor_de.ts: some
+  beautifying changes to the treeview
+
+2010-04-28  M. Mehdi Salem Naraghi <momesana@googlemail.com>
+
+  * application.qrc, forms/mainwindow.ui, src/mainwindow.cpp: introduces some
+  icons
+
+  * src/mainwindow.cpp: fixed quit button shortcut
+
+  * regexpeditor.pro, src/main.cpp, src/mainwindow.cpp: some small changes
+
+  * src/main.cpp, src/mainwindow.cpp: Entering return while in the regexp edit
+  does the same as pressing the evaluate button now
+
+  * regexpeditor.pro: changes executable name from regexp-editor to
+  qregexp-editor
+
+  * .gitignore, ABOUT.html, AUTHORS, AUTHORS.html, COPYING, COPYING.html,
+  application.qrc, forms/aboutdialog.ui, forms/mainwindow.ui, regexpeditor.pro,
+  src/aboutdialog.cpp, src/aboutdialog.h, src/main.cpp, src/mainwindow.cpp,
+  src/mainwindow.h, src/node.h, src/regexpmodel.cpp, src/regexpmodel.h,
+  translations/regexpeditor_de.qm, translations/regexpeditor_de.ts,
+  translations/regexpeditor_fa.ts: Initial checkin
